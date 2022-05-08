@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+     <script>
+        function newProd(ulid){
+            
+            var mainList = document.getElementById(ulid);
+            
+            
+            
+            var liProdId = document.createElement("li");
+            var prodId = document.createElement("input");
+            prodId.placeholder="ENTER PROD ID";
+            prodId.name="productId";
+            prodId.id="prod-id";
+            liProdId.appendChild(prodId);
+            
+            
+            var liProdName = document.createElement("li");
+            var prodName = document.createElement("input");
+            prodName.placeholder="ENTER PROD NAME";
+            prodName.name="productName";
+            liProdName.appendChild(prodName);
+            
+            var liProdQty = document.createElement("li");
+            var prodQty = document.createElement("input");
+            prodQty.placeholder="ENTER Quantity";
+            prodQty.name="quantity";
+            liProdQty.appendChild(prodQty);
+            
+            mainList.appendChild(liProdId);
+            mainList.appendChild(liProdName);
+            mainList.appendChild(liProdQty);
+            
+        }
+        
+    </script>
+    
+    <style>
+        ul{
+            
+            list-style-type: none;
+        }
+        #prod-id{
+            margin-top: 30px;
+        }
+    </style>
+    </head>
+    
+    <body>
+        <div>ADD PRODUCT</div>
+       <!-- action="AddServlet.do" method="post" -->
+       <form action="AddProductServlet.do" method="post" > 
+            <ul id="ulid">
+                
+                <li><input placeholder="ENTER PROD ID" name="productId" /></li>
+                <li><input placeholder="ENTER PROD NAME" name="productName" /></li>
+                <li><input placeholder="ENTER Quantity" name="quantity" /></li>
+                
+            </ul>
+            <ul>
+                <li><input type="button" onclick="newProd('ulid')" value="ANOTHER PRODUCT" /></li>
+              <li><input value="SUBMIT" type="submit" /></li>
+             </ul>
+            
+        </form>
+    </body>
+</html>

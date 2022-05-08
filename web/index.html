@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Welcome page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+        body{
+           font-family: sans-serif;background-color: graytext;
+           color: white;
+           
+        }
+        
+    </style>
+    </head>
+    
+    <body>
+        <h1>WELCOME</h1>
+        <form action="RegisterClientServlet.do" method="post">
+            <table>
+                <tr>
+                    <td>Please enter your name:</td>
+                    <td><input name="userName" type="text"/></td>
+                    
+                </tr>
+                <tr>
+                    <td>Please enter your address ID</td>
+                    <td><input name="addressId" type="text"/></td>
+                 </tr>
+                 <tr>
+                    <td>Please enter your City</td>
+                    <td><input name="city" type="text"/></td>
+                 </tr>
+                 <tr>
+                    <td>Please enter your postal-code</td>
+                    <td><input name="postalCode" type="text"/></td>
+                 </tr>
+                 <tr>
+                    <td><input value="PROCESS" type="submit"/></td>
+                 </tr>
+                
+            </table>
+        </form>
+    </body>
+</html>
