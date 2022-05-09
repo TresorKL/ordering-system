@@ -39,7 +39,7 @@ public class AddProductServlet extends HttpServlet {
          
          Client client=clientFacade.findClient(clientId);
         // if client want to add products again (after) after the 1st time 
-         if(client.getProducts()!=null){
+         if(client.getProducts().size()>0){
              
          List <Product>OldProducts=client.getProducts();
          
@@ -47,16 +47,18 @@ public class AddProductServlet extends HttpServlet {
              
              OldProducts.add(products.get(i));
              }
+             List <Product>newProducts=OldProducts;
              
-             client.setProducts(OldProducts);
+             client.setProducts(newProducts);
+             clientFacade.editClient(client);
          
          }else{
          
            client.setProducts(products);
-         
+           clientFacade.editClient(client);
          }
          
-         clientFacade.editClient(client);
+         
          
          RequestDispatcher disp = request.getRequestDispatcher("menu.html");
         disp.forward(request, response);

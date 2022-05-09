@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import za.ac.tut.address.Address;
 import za.ac.tut.product.Product;
@@ -31,7 +32,7 @@ public class Client implements Serializable {
     @JoinColumn(name="address_fk")
     private Address address;
     
-    @OneToOne(fetch=FetchType.LAZY,targetEntity=Product.class, cascade= CascadeType.PERSIST)
+    @OneToMany(fetch=FetchType.LAZY,targetEntity=Product.class, cascade= CascadeType.PERSIST)
     @JoinTable(name="jnd_client_product", joinColumns=@JoinColumn(name="client_fk"),
                inverseJoinColumns=@JoinColumn(name="product_fk"))
     private List<Product>products;
